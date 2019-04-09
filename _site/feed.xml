@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-09T17:54:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">BeyondCloudOps</title><subtitle>We build a better tomorrow</subtitle><entry><title type="html">How to launch a website with Github Pages and Google Domains</title><link href="http://localhost:4000/2019/04/09/github-pages-and-google-domain.html" rel="alternate" type="text/html" title="How to launch a website with Github Pages and Google Domains" /><published>2019-04-09T15:11:22-04:00</published><updated>2019-04-09T15:11:22-04:00</updated><id>http://localhost:4000/2019/04/09/github-pages-and-google-domain</id><content type="html" xml:base="http://localhost:4000/2019/04/09/github-pages-and-google-domain.html">&lt;/html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        mark {
+            background-color: white;
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;p&gt;It's been a while I was looking for some better solution to setup a blogging website and here I found something interesting. In this blog you are going to build free blogging website.&lt;/p&gt;
+
+    &lt;h2 class=&quot;section-heading&quot;&gt;Github&lt;/h2&gt;
+    &lt;p&gt;Go &lt;a href=&quot;https://github.com&quot;&gt;
+            &lt;mark&gt;Github.com&lt;/mark&gt;
+        &lt;/a&gt; and sign up for Github account. If you have already account then well and good.&lt;/p&gt;
+
+    &lt;h2 class=&quot;section-heading&quot;&gt;Github Pages&lt;/h2&gt;
+    &lt;p&gt;For this you are going to use Github Pages service and it will work as a free website hosting service. On Github.com you need to setup your own free Github pages repository, e.g. https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io
+    &lt;img src=&quot;https://s3.amazonaws.com/beyondcloudops-covers/create-a-github-repository.png&quot; alt=&quot;github-repository&quot;&gt;
+
+    &lt;h2 class=&quot;section-heading&quot;&gt;Create your static website&lt;/h2&gt;
+    &lt;p&gt;In this blog we are going to setup pretty simple static website but you can setup fancy web site as well with GitHub Pages supported themes but here I am going to keep it simple. just creating Hello world HTML site.
+    &lt;br&gt;Go to your local machine terminal and create following files and directories&lt;/p&gt;
+
+    &lt;div style=&quot;background-color:#D3D3D3;&quot;&gt;
+	    &lt;p&gt;$ mkdir &amp;lt;YOUR_GITHUB_USER_NAME&amp;gt;.github.io
+	    &lt;br&gt;$ cd &amp;lt;YOUR_GITHUB_USER_NAME&amp;gt;.github.io
+	    &lt;br&gt;$ touch index.html.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Then add following supper easy HTML code in your index.html file.&lt;/p&gt;
+    &lt;div style=&quot;background-color:#D3D3D3;&quot;&gt;
+	    &lt;p&gt;&amp;lt;html&amp;gt;
+	    &lt;br&gt;&amp;lt;header&amp;gt;&amp;lt;title&amp;gt;Welcome to Github Pages.&amp;lt;/title&amp;gt;&amp;lt;/header&amp;gt;
+	    &lt;br&gt;&amp;lt;body&amp;gt;
+	    &lt;br&gt;Hello world
+	    &lt;br&gt;&amp;lt;/body&amp;gt;
+	    &lt;br&gt;&amp;lt;/html&amp;gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Now in same directroy run following few command to create a local git repo and commit your code&lt;/p&gt;
+    &lt;div style=&quot;background-color:#D3D3D3;&quot;&gt;
+            &lt;p&gt;$ git init
+            &lt;br&gt;$ git add index.html
+	    &lt;br&gt;$ git commit -m &quot;first commit&quot;
+	    &lt;br&gt;$ git remote add origin git@github.com:&amp;lt;YOUR_GITHUB_USERNAME&amp;gt;/&amp;lt;YOUR_GITHUb_REPO_NAME&amp;gt;.github.io.git
+            &lt;br&gt;$ git push -u origin master&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Now you should be able to access webite with github.io URL. e.g. https://&amp;lt;YOUR_GITHUB_REPO_NAME&amp;gt;/.github.io that is https://example.github.io.
+    &lt;br&gt;Some times it takes few minutes to deploy your changes. You might need to wait for 5-10 minutes here.&lt;/p&gt;
+
+    &lt;h2 class=&quot;section-heading&quot;&gt;Custom domain for your GitHub Pages&lt;/h2&gt;
+    &lt;p&gt;If you are looking for custom domain for your GitHub Pages website then add CNAME file in your github repository as following and add your domain name in that CNAME file. e.g. example.com&lt;/p&gt;
+    &lt;div style=&quot;background-color:#D3D3D3;&quot;&gt;
+            &lt;p&gt;$ touch CNAME
+	    &lt;br&gt;$ git add CNAME
+            &lt;br&gt;$ git commit -m &quot;Add CNAME&quot;
+            &lt;br&gt;$ git push -u origin master&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;h2 class=&quot;section-heading&quot;&gt;Google Doamins&lt;/h2&gt;
+    &lt;p&gt;Purchase a domain at
+        &lt;a href=&quot;https://domains.google.com/&quot;&gt;
+            &lt;mark&gt;Google Domains&lt;/mark&gt;
+        &lt;/a&gt; at just $12 a year. &lt;/p&gt;
+
+	&lt;p&gt;Once you purchase a domain then point it your github pages website. To do that go to &quot;Configure DNS&quot; tab on https://domains.google.com and scroll down to the &quot;Custom resource records&quot; section.
+	You need to add A record which points to Github pages IP addresses.&lt;/p&gt;
+&lt;img src=&quot;https://s3.amazonaws.com/beyondcloudops-covers/google-domains-custom-resource-records.png&quot; alt=&quot;google-domains&quot;&gt;
+     &lt;p&gt;Site is live now at https://example.com. Check it out.&lt;/p&gt;
+     &lt;p&gt;I hope this post was helpful!&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
