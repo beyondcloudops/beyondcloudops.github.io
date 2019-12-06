@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: beyondcloudops.com
+Token: 36b9a09f751f3e61f9f17cf19c116186750723b5d7230391169fb1642ee2927c
